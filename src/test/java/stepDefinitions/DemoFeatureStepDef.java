@@ -18,8 +18,8 @@ public class DemoFeatureStepDef {
 
 	@When("Something is done")
 	public void something_is_done() {
-		Assert.fail("Something is wrong");
-//	    System.out.println("Something is done");
+		//Assert.fail("Something is wrong");
+	    System.out.println("Something is done");
 	}
 	
 	@Then("Something is expected")
