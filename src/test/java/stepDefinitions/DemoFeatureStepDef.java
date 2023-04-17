@@ -1,9 +1,12 @@
 package stepDefinitions;
 
+import static org.junit.Assert.fail;
+
+import org.junit.Assert;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import junit.framework.Assert;
 
 public class DemoFeatureStepDef {
 
@@ -18,7 +21,7 @@ public class DemoFeatureStepDef {
 		Assert.fail("Something is wrong");
 //	    System.out.println("Something is done");
 	}
-
+	
 	@Then("Something is expected")
 	public void something_is_expected() {
 	    System.out.println("Something is expected");
