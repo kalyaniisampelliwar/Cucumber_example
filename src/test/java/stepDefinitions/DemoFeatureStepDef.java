@@ -3,6 +3,7 @@ package stepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import junit.framework.Assert;
 
 public class DemoFeatureStepDef {
 
@@ -14,7 +15,8 @@ public class DemoFeatureStepDef {
 
 	@When("Something is done")
 	public void something_is_done() {
-	    System.out.println("Something is done");
+		Assert.fail("Something is wrong");
+//	    System.out.println("Something is done");
 	}
 
 	@Then("Something is expected")
