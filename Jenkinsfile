@@ -8,7 +8,7 @@ import groovy.json.JsonSlurper
 		]
 		
 		// Get the current issue data
- 		currentIssueData = httpRequest(url: jiraUrl, acceptType: '*/*')
+ 		currentIssueData = httpRequest(url: jiraUrl, acceptType: 'APPLICATION_JSON')
 		currentIssueJson = new JsonSlurper().parseText(currentIssueData.content)
 		
 		// Update the issue data
