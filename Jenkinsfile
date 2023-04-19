@@ -3,9 +3,7 @@ import groovy.json.JsonSlurper
 	def jiraCall(){
 		issueKey = "CAL-13" // replace with the actual issue key
    	 	jiraUrl = "https://kalyani0908.atlassian.net/rest/api/latest/issue/$issueKey"				
-	 	auth1 = "kalyanis.0908@gmail.com:KalAru@0908".bytes.encodeBase64() // replace with your Jira credentials
 		headers = [
-		    'Authorization': "Basic $auth1",
 		    'Content-Type': 'application/json'
 		]
 		
