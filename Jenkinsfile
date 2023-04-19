@@ -16,7 +16,7 @@ import groovy.json.JsonSlurper
 		newIssueData.fields.customfield_10038 = "Pass=10 Fail=7" // replace with the appropriate custom field ID and value
 		
 		// Update the issue in Jira
-		httpRequest(url: jiraUrl, httpMode: 'PUT', headers: headers, acceptType: 'APPLICATION_JSON', requestBody: JsonOutput.toJson(newIssueData), validResponseCodes: '200:404')
+		httpRequest(url: jiraUrl, httpMethod: 'PUT', headers: headers, acceptType: 'APPLICATION_JSON', requestBody: JsonOutput.toJson(newIssueData), validResponseCodes: '200:404')
 	}
 	pipeline {
 	    agent any
