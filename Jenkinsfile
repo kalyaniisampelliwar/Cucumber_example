@@ -20,7 +20,7 @@ pipeline {
         stage('JiraUpdate') {
             steps {            	
             	script{            
-               		
+               		echo 'Hello World'
 	            }
             }
         }
