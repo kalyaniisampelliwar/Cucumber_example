@@ -20,7 +20,8 @@ pipeline {
         stage('JiraUpdate') {
             steps {            	
             	script{            
-               		echo 'Hello World'
+               		issueKey = "CAL-13" // replace with the actual issue key
+ 					jiraUrl = "https://kalyani0908.atlassian.net/rest/api/2/issue/$issueKey"		
 	            }
             }
         }
