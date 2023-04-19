@@ -13,9 +13,9 @@ pipeline {
             	script{            
                		issueKey = "CAL-13" // replace with the actual issue key
                	 	jiraUrl = "https://kalyani0908.atlassian.net/rest/api/latest/issue/$issueKey"				
-				 	auth = "kalyanis.0908@gmail.com:ATATT3xFfGF0CM0BORP6gV4mdQ83KeAI63iwjH9AGAmUHOTjQTAVM_k0CvkV6vE945KtX7eYCVbsL9uKS9CwqWnEoqkqfvjkvsQlj_KGQwS7VCff4A6Yv_UIsphOEi7H1GTEIabB47Aar3dtsSte7rdI-wGHW7q6FljguYWGI6eTSpiTH1SkSfM=9DF9191A".bytes.encodeBase64() // replace with your Jira credentials
+				 	auth1 = "kalyanis.0908@gmail.com:ATATT3xFfGF0CM0BORP6gV4mdQ83KeAI63iwjH9AGAmUHOTjQTAVM_k0CvkV6vE945KtX7eYCVbsL9uKS9CwqWnEoqkqfvjkvsQlj_KGQwS7VCff4A6Yv_UIsphOEi7H1GTEIabB47Aar3dtsSte7rdI-wGHW7q6FljguYWGI6eTSpiTH1SkSfM=9DF9191A".bytes.encodeBase64() // replace with your Jira credentials
 					headers = [
-					    'Authorization': "Basic $auth",
+					    'Authorization': "Basic $auth1",
 					    'Content-Type': 'application/json'
 					]
 					
