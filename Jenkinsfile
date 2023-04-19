@@ -1,3 +1,5 @@
+import groovy.json.JsonSlurper
+
 pipeline {
     agent any
 
@@ -7,7 +9,7 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stage('JiraUpdaye') {
+        stage('JiraUpdate') {
             steps {
                	def issueKey = "CAL-13" // replace with the actual issue key
 				def jiraUrl = "https://kalyani0908.atlassian.net/rest/api/latest/issue/$issueKey"
