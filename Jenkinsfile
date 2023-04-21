@@ -8,7 +8,6 @@ import org.apache.http.entity.ContentType
 import org.apache.http.entity.StringEntity
 import org.apache.http.impl.client.HttpClientBuilder
 import org.apache.http.util.EntityUtils
-import groovy.net.http.HTTPBuilder
 
 pipeline {
     agent any
@@ -25,20 +24,23 @@ pipeline {
                         fields: [
                             summary: "Updated issue summary",
                             description: "Updated issue description",
-                            customfield_10038: "Updated custom field value"
+                            customfield_10000: "Updated custom field value"
                         ]
                     ]).toString()
 
-                    def httpClient = new groovy.net.http.HTTPBuilder(jiraEndpoint)
-                    httpClient.auth.basic(jiraUsername, jiraPassword)
-                    httpClient.request(Method.PUT, ContentType.JSON) {
-                        body = updateData
-                        response.success = { resp, json ->
-                            println("JIRA issue ${json.key} successfully updated.")
-                        }
-                        response.failure = { resp ->
-                            println("Failed to update JIRA issue: ${resp.statusLine.statusCode} - ${resp.statusLine.reasonPhrase}")
-                        }
+                    def response = httpRequest(
+                        url: jiraEndpoint,
+                        authentication: "${jiraUsername}:${jiraPassword}",
+                        contentType: 'APPLICATION_JSON',
+                        customHeaders: [[name: 'Authorization', value: 'Basic ' + "${jiraUsername}:${jiraPassword}".bytes.encodeBase64().toString()]],
+                        requestBody: updateData,
+                        httpMode: 'PUT'
+                    )
+
+                    if (response.status == 204) {
+                        println("JIRA issue ${response.contentAsString} successfully updated.")
+                    } else {
+                        println("Failed to update JIRA issue: ${response.status} - ${response.contentAsString}")
                     }
                 }
             }
