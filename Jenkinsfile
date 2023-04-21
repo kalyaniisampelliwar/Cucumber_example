@@ -18,7 +18,7 @@ pipeline {
                 script {
                     jiraEndpoint = "https://kalyani0908.atlassian.net/rest/api/2/issue/CAL-13"
 					jiraUsername = "kalyanis.0908@gmail.com"
-					jiraPassword = "ATATT3xFfGF0oEqY7UiljCHdCt4RX_fmft5Nbb6FROTiQ7SmldGNA_3gbm5btrbumsOjDrND-AlRR1fpCuduL0W4RaDFQN4o0lmlIwosErfbyCbW5_sgreUmkXDw6R8flO3PffHGWne2AFmItFwb4BY-bc5asv_FVA6tJNZ35dWXxbTg5Tw_RK8=53201FFE"
+					jiraPassword = "ATATT3xFfGF0f0TEeNBgbKx8YGfFtj8Jm1izY1Co9PH4DlNUjIF5hFnfIaXqUc5dqIU5LXiq-sZCjsDukSlEOIUgq5h90DToFDnc0ifC_clTPLmerhBd9-H2mSm6TXelxXrmF8bwezjkdj98iPn_I4pd4oQbjVCS9h8rzzpIBXqmtpcibhhaZQk=806A049A"
 
                     updateData = new groovy.json.JsonBuilder([
                         fields: [
