@@ -30,12 +30,12 @@ pipeline {
 
                     response = httpRequest(
                         url: jiraEndpoint,
-                        authentication: 'Jenkins-jira',
+                        authentication: "${jiraUsername}:${jiraPassword}",
                         contentType: 'APPLICATION_JSON',
                         customHeaders: [[name: 'Authorization', value: 'Basic ' + "${jiraUsername}:${jiraPassword}".bytes.encodeBase64().toString()]],
                         requestBody: updateData,
                         httpMode: 'PUT'
-                    )
+                    ).trustAllCertificates()
 
                     if (response.status == 204) {
                         println("JIRA issue ${response.contentAsString} successfully updated.")
