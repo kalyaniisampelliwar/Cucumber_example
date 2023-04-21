@@ -16,11 +16,11 @@ pipeline {
         stage('Update JIRA Issue') {
             steps {
                 script {
-                    def jiraEndpoint = "https://kalyani0908.atlassian.net/rest/api/2/issue/CAL-13"
-					def jiraUsername = "kalyanis.0908@gmail.com"
-					def jiraPassword = "ATATT3xFfGF0MA9Qvtdyr6sl9t-K9Me_vV-xUJXF6oK_7lhGoWfQ2b-0dUMdstou9rdQLx8xbAwzJXHWGJfSkq6zzoSQHBBydX4PFZCYyuipjgkFiUB05YJ9TgybNg0tPFPmVnig42fE5mjisuEtgtNsT9Pp5glGrxTxrfK7Cy-e5UQbTysFJ2c=27CAB760"
+                    jiraEndpoint = "https://kalyani0908.atlassian.net/rest/api/2/issue/CAL-13"
+					jiraUsername = "kalyanis.0908@gmail.com"
+					jiraPassword = "ATATT3xFfGF0MA9Qvtdyr6sl9t-K9Me_vV-xUJXF6oK_7lhGoWfQ2b-0dUMdstou9rdQLx8xbAwzJXHWGJfSkq6zzoSQHBBydX4PFZCYyuipjgkFiUB05YJ9TgybNg0tPFPmVnig42fE5mjisuEtgtNsT9Pp5glGrxTxrfK7Cy-e5UQbTysFJ2c=27CAB760"
 
-                    def updateData = new groovy.json.JsonBuilder([
+                    updateData = new groovy.json.JsonBuilder([
                         fields: [
                             summary: "Updated issue summary",
                             description: "Updated issue description",
@@ -28,7 +28,7 @@ pipeline {
                         ]
                     ]).toString()
 
-                    def response = httpRequest(
+                    response = httpRequest(
                         url: jiraEndpoint,
                         authentication: "${jiraUsername}:${jiraPassword}",
                         contentType: 'APPLICATION_JSON',
