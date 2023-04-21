@@ -8,7 +8,7 @@ import org.apache.http.entity.ContentType
 import org.apache.http.entity.StringEntity
 import org.apache.http.impl.client.HttpClientBuilder
 import org.apache.http.util.EntityUtils
-import groovyx.net.http.HTTPBuilder
+import groovy.net.http.HTTPBuilder
 
 pipeline {
     agent any
