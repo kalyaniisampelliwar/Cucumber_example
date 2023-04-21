@@ -30,7 +30,7 @@ pipeline {
 
                     response = httpRequest(
                         url: jiraEndpoint,
-                        authentication: "${jiraUsername}:${jiraPassword}",
+                        authentication: "Jenkins-jira",
                         contentType: 'APPLICATION_JSON',
                         customHeaders: [[name: 'Authorization', value: 'Basic ' + "${jiraUsername}:${jiraPassword}".bytes.encodeBase64().toString()]],
                         requestBody: updateData,
