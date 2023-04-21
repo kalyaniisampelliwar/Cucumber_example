@@ -1,3 +1,15 @@
+import groovy.json.JsonBuilder
+import groovy.json.JsonSlurper
+import org.apache.http.HttpEntity
+import org.apache.http.HttpResponse
+import org.apache.http.client.HttpClient
+import org.apache.http.client.methods.HttpPut
+import org.apache.http.entity.ContentType
+import org.apache.http.entity.StringEntity
+import org.apache.http.impl.client.HttpClientBuilder
+import org.apache.http.util.EntityUtils
+
+
 pipeline {
     agent any
 
